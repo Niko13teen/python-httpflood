@@ -1,0 +1,4 @@
+requests
+argparse
+prettytable
+requests_html
