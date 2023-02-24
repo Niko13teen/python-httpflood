@@ -7,15 +7,13 @@ from prettytable import PrettyTable
 from multiprocessing import Pool
 from requests_html import HTMLSession
 
+
 logging.basicConfig(
     level=logging.INFO,
     filename="log.log",
     filemode="w",
     format="%(asctime)s %(levelname)s %(message)s",
 )
-logging.info("An INFO")
-logging.error("An ERROR")
-
 
 class ConstructorApp:
     __version__ = ''''1.0.0 Beta'''
@@ -50,7 +48,6 @@ class ConstructorApp:
             logging.error("ValueError : parry : continue", exc_info=True)
             return self._processes
 
-
 def main(processes: int, hostname: str):
     construct_app = ConstructorApp(processes, hostname)
     links = construct_app.get_links()
@@ -63,7 +60,6 @@ def main(processes: int, hostname: str):
         process.starmap(run_app, product([links], [hostname]))
 
     return pool()
-
 
 def run_app(links, hostname):
     table = PrettyTable()
