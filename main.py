@@ -62,7 +62,7 @@ def main(processes: int, hostname: str):
 
     return pool()
 
-def run_app(links: List[str, ...], hostname: List[str]):
+def run_app(links: List[str], hostname: List[str]):
     table = PrettyTable()
     table.field_names: List[str, 4] = ["Requests", "StatusCode", "ResponseTime", "HTTP Method"]
     while True:
