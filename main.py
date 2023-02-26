@@ -64,7 +64,7 @@ def main(processes: int, hostname: str):
 
 def run_app(links: List[str, ...], hostname: List[str]):
     table = PrettyTable()
-    table.field_names = ["Requests", "StatusCode", "ResponseTime", "HTTP Method"]
+    table.field_names: List[str, 4] = ["Requests", "StatusCode", "ResponseTime", "HTTP Method"]
     while True:
         response = requests.get(f"{hostname}{random.choice(links)}")
         logging.info(
