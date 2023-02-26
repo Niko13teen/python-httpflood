@@ -6,7 +6,7 @@ from itertools import product
 from prettytable import PrettyTable
 from multiprocessing import Pool
 from requests_html import HTMLSession
-from typing import List
+from typing import List, NoReturn
 
 
 logging.basicConfig(
@@ -62,7 +62,7 @@ def main(processes: int, hostname: str):
 
     return pool()
 
-def run_app(links: List[str], hostname: List[str]):
+def run_app(links: List[str], hostname: List[str]) -> NoReturn:
     table = PrettyTable()
     table.field_names: List[str, 4] = ["Requests", "StatusCode", "ResponseTime", "HTTP Method"]
     while True:
